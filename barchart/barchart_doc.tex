@@ -1,0 +1,159 @@
+\documentclass[]{article}
+\usepackage{barchart}
+
+\title{\texttt{barchart}: Easy Bar Chart in \LaTeX
+	\medskip\\
+	\large Version 0.1.0
+}
+\author{Frederik Vanggaard}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\texttt{barchart} is a \LaTeX\space package for creating simple and easy to use bar-chart. The package is heavily inspired by \texttt{bchart} by Tobias Kuhn. \texttt{barchart} provides an easy way to create vertical barcharts using Tikz.  
+
+\section{Charts}
+\texttt{barchart} comes with a variety of customization options for both the overall chart and for each individual bar. A simple chart can be done like this:
+
+\begin{quote}\small
+\begin{verbatim}
+\begin{barchart}
+    \barc{5}
+    \barc{7}
+    \barc{3}
+\end{barchart}
+\end{verbatim}
+\end{quote}
+\begin{quote}\small
+\begin{figure}[ht]
+	\begin{barchart}
+		\barc{5}
+		\barc{7}
+		\barc{3}
+	\end{barchart}
+\end{figure}
+\end{quote}
+
+The only arguments that are mandatory is the bar value. The charts can be changed using a few simple options such as \texttt{min}, \texttt{max} and \texttt{step}.
+
+\begin{quote}\small
+\begin{verbatim}
+\begin{barchart}[min = 0, max = 60, step = 10, height=0.25em]
+    \barc{30}
+    \barc{20}
+    \barc{50}
+\end{barchart}
+\end{verbatim}
+\end{quote}
+\begin{quote}\small
+\begin{figure}[ht]
+	\begin{barchart}[min = 0, max = 60, step = 10, height=0.25em]
+		\barc{30}
+		\barc{20}
+		\barc{50}
+	\end{barchart}
+\end{figure}
+\end{quote}
+
+\texttt{height} is used to set the height of the whole chart. Omitting a height on charts with large \texttt{max} values will make the chart enormous.
+
+\section{Bars}
+Each bar can be customized to your liking. This can be done using \texttt{color}, \texttt{width} and \texttt{plain}.
+\texttt{color} changes the color of each bar like:
+
+
+\begin{quote}\small
+\begin{verbatim}
+\begin{barchart}[step = 2]    
+    \barc[color=yellow!60]{5}
+    \barc[color=orange!60]{7}
+    \barc[color=cyan!60]{3}
+\end{barchart}
+\end{verbatim}
+\end{quote}
+\begin{quote}\small
+\begin{figure}[ht]
+	\begin{barchart}[step = 2]
+		\barc[color=yellow!60]{5}
+		\barc[color=orange!60]{7}
+		\barc[color=cyan!60]{3}
+	\end{barchart}
+\end{figure}
+\end{quote}
+
+\texttt{width} changes the width of each bar:
+
+\begin{quote}\small
+\begin{verbatim}
+\begin{barchart}[step = 2]
+    \barc[width=40pt]{5}
+    \barc[width=30pt]{7}
+    \barc[width=50pt]{3}
+    \barc[width=20pt]{3}
+\end{barchart}
+\end{verbatim}
+\end{quote}
+\begin{quote}\small
+\begin{figure}[ht]
+	\begin{barchart}[step = 2]
+		\barc[width=40pt]{5}
+		\barc[width=30pt]{7}
+		\barc[width=50pt]{3}
+		\barc[width=20pt]{3}
+	\end{barchart}
+\end{figure}
+\end{quote}
+Using less than \texttt{20pt} is not recommended. Instead of using pre-defined step as the examples have shown so far, \texttt{steps} can be used.
+
+\begin{quote}\small
+\begin{verbatim}
+\begin{barchart}[steps = {1,3,5,7,10}]
+    \barc{5}
+    \barc{7}
+    \barc{3}
+\end{barchart}
+\end{verbatim}
+\end{quote}
+\begin{quote}\small
+\begin{figure}[ht]
+	\begin{barchart}[steps = {1,3,5,7,10}]
+		\barc{5}
+		\barc{7}
+		\barc{3}
+	\end{barchart}
+\end{figure}
+\end{quote}
+
+\texttt{plain} is a boolean which can either be \texttt{true} or \texttt{false} and removes the label on the bar.
+\begin{quote}\small
+\begin{verbatim}
+\begin{barchart}
+    \barc{5}
+    \barc[plain=true]{7}
+    \barc[plain=true]{3}
+\end{barchart}
+\end{verbatim}
+\end{quote}
+\begin{quote}\small
+\begin{figure}[ht]
+	\begin{barchart}
+		\barc{5}
+		\barc[plain=true]{7}
+		\barc[plain=true]{3}
+	\end{barchart}
+\end{figure}
+\end{quote}
+
+
+\section{Skips}
+
+\section{Labels}
+
+\section{Scaling}
+
+\section{Known Issues}
+
+\end{document}
