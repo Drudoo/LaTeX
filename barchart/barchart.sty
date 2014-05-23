@@ -105,7 +105,7 @@
 	    	\node[label={[label distance=0.5cm,text depth=-1ex,rotate=-90]right:\barclabel}] at ($($\barcmin*(0,\barcrange/\barcrange) + (\barcwidth+\barcpos-5mm,0)$)!0.5!(\barcpos,1.5) $) {};
 	    }
 	    \ifthenelse{\equal{\barcrotation}{false}}{true}{
-	    	\node[label={[label distance=0.5cm,text depth=-1ex,rotate=-45]right:\barclabel}] at ($($\barcmin*(0,\barcrange/\barcrange) + (\barcwidth+\barcpos-10mm,0)$)!0.5!(\barcpos,1) $) {};
+	    	\node[label={[label distance=0.5cm,text depth=-1ex,rotate=-45]right:\barclabel}] at ($($\barcmin*(0,\barcrange/\barcrange) + (\barcwidth+\barcpos-15mm,0)$)!0.5!(\barcpos,1) $) {};
 	    }
 
 		\addtolength{\barcpos}{\dimexpr(\barcwidth-20pt) \relax}
@@ -155,7 +155,7 @@
 
 	\ifthenelse{\equal{\barcy}{}}{}{
 		%\node[label={[label distance=0.5cm,align=center,text depth=-1ex,rotate=-90]left:\barcy}] at ($(-0.75,\barcmax) !0.5! (0,\barcmin)$){};
-		\node[rotate=-90] at ($(-0.75-\barcmax/100,\barcmax) !0.5! (0,\barcmin)$){\barcy};
+		\node[rotate=-90] at ($(-1.25-\barcmax/100,\barcmax) !0.5! (0,\barcmin)$){\barcy};
 	}
 	\end{tikzpicture}%
 
