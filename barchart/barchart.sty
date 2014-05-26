@@ -128,7 +128,7 @@
 	\renewcommand{\medskip}[1][]{\barcskip[##1]{5.0mm}}
 	\renewcommand{\bigskip}[1][]{\barcskip[##1]{7.5mm}}
 
-	\newcommand{\barcrange}{\bcstripunit{\dimexpr\barcmax pt-\barcmin pt\relax}}
+	\newcommand{\barcrange}{\barcstripunit{\dimexpr\barcmax pt-\barcmin pt\relax}}
 	\renewcommand{\barcstep}{\barcrange}
 	\renewcommand{\barcsteps}{0,\barcstep,...,\barcrange}%
 
@@ -141,14 +141,14 @@
 	\draw (0,0) -- (\barcpos+\barcwidth,0);
 	\draw (0,0) -- ($(0,(\barcmax-\barcmin)$);
 	\draw (0,0) -- (0-1mm,0);
-    \node[anchor=east] (n) at (0-1mm,0) {\bcstripunit{\dimexpr\barcmin pt\relax}};
+    \node[anchor=east] (n) at (0-1mm,0) {\barcstripunit{\dimexpr\barcmin pt\relax}};
     \coordinate (labelpos) at (n.east);
 
 
 	\foreach \x in \barcsteps {
 		\ifthenelse{\equal{\x}{0}}{}{
 			\draw ($\x*(0,\barcmax/\barcrange) + (0,0)$) -- ($\x*(0,\barcmax/\barcrange) + (0-1mm,0)$);
-			\node[anchor=east] at (-1mm,\x){\bcstripunit{\dimexpr\barcmin pt+\x pt\relax}};
+			\node[anchor=east] at (-1mm,\x){\barcstripunit{\dimexpr\barcmin pt+\x pt\relax}};
 		}
 	}
 
@@ -163,7 +163,7 @@
 }
 
 \makeatletter
-\newcommand*{\bcstripunit}[1]{\strip@pt#1}
+\newcommand*{\barcstripunit}[1]{\strip@pt#1}
 \makeatother
 
 
