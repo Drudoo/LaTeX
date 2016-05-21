@@ -15,6 +15,12 @@ LaTeX
 
 
 	\iffalse
-	%code
+		%code
 	\fi
 
+- Scale tabular
+
+
+	\resizebox{\textwidth}{!}{%
+    	%tabular
+    }
